@@ -16,3 +16,4 @@ runs:
   main: dist/index.js
 branding:
   icon: heart
+  color: orange
