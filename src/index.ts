@@ -4,7 +4,7 @@ import { Core } from './core'
 
 async function run(): Promise<void> {
   try {
-    core.info(`action: ${github.context.action}`)
+    core.info(`action: ${github.context.eventName}`)
     Core.firstIssue()
     Core.firstPR()
     Core.firstPRMerged()

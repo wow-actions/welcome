@@ -4,7 +4,6 @@ import { Util } from './util'
 
 export namespace Core {
   export async function firstIssue() {
-    console.log('action:', github.context.action)
     const context = github.context
     const comment = core.getInput('FIRST_ISSUE')
     if (context.payload.issue && comment) {
@@ -30,7 +29,6 @@ export namespace Core {
   }
 
   export async function firstPR() {
-    console.log('action:', github.context.action)
     const context = github.context
     const comment = core.getInput('FIRST_PR')
     if (context.payload.pull_request && comment) {
