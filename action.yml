@@ -1,5 +1,5 @@
 name: Welcome
-description: Welcomes new users.
+description: Welcome new users.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   GITHUB_TOKEN:
@@ -12,8 +12,8 @@ inputs:
   FIRST_PR_MERGED:
     description: Comment to be posted to on pull requests merged by a first time user.
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: dist/index.js
 branding:
   color: coral
   icon: heart
