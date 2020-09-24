@@ -19,9 +19,9 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: >
-            👋 @${author}
+            Hi 👋 @${author}
             
-             Thanks for opening your first issue here! Be sure to follow the issue template!
+            Thanks for opening your first issue here! Be sure to follow the issue template!
 
 
           FIRST_PR: >
