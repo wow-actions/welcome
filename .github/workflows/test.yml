@@ -13,4 +13,4 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRST_ISSUE: Thanks for opening your first issue here! Be sure to follow the issue template!
+          FIRST_ISSUE: Hi, ${author} Thanks for opening your first issue here! Be sure to follow the issue template!

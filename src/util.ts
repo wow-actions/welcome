@@ -1,5 +1,7 @@
 import random from 'lodash.random'
 import template from 'lodash.template'
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
 export namespace Util {
   export function pickComment(
@@ -15,5 +17,10 @@ export namespace Util {
     }
 
     return args ? template(result)(args) : result
+  }
+
+  export function getOctokit() {
+    const token = core.getInput('GITHUB_TOKEN', { required: true })
+    return github.getOctokit(token)
   }
 }
