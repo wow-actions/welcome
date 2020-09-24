@@ -1,9 +1,9 @@
-name: Welcome
-description: Welcome new users.
+name: Welcome New Users
+description: Give a welcome comment on first issue or PR 💖.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   GITHUB_TOKEN:
-    description: 'Your GitHub token for authentication'
+    description: Your GitHub token for authentication
     required: true
   FIRST_ISSUE:
     description: Comment to be posted to on first time issues.
@@ -16,4 +16,4 @@ runs:
   main: dist/index.js
 branding:
   color: coral
-  icon: heart
+  icon: orange
