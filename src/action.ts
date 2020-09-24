@@ -4,8 +4,6 @@ import { Util } from './util'
 
 export namespace Action {
   export async function run(context = github.context) {
-    core.info(`action: ${JSON.stringify(context)}`)
-
     try {
       const event = context.eventName
       const action = context.payload.action
@@ -60,7 +58,7 @@ export namespace Action {
             (item) => item.number !== pr.number,
           )
 
-          if (merged.length >= 0) {
+          if (merged.length === 0) {
             await octokit.issues.createComment({
               ...context.repo,
               issue_number: pr.number,
