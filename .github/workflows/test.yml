@@ -13,4 +13,20 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRST_ISSUE: Hi, ${author} Thanks for opening your first issue here! Be sure to follow the issue template!
+          FIRST_ISSUE: >
+            👋 @${author}
+
+             Thanks for opening your first issue here! Be sure to follow the issue template!
+
+
+          FIRST_PR: >
+            👋 @${author}
+
+            Thanks for opening this pull request! Please check out our contributing guidelines.
+
+
+          FIRST_PR_MERGED: >
+            🎉 @${author}
+
+            Congrats on merging your first pull request! We here at behaviorbot are proud of you!
+
