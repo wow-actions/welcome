@@ -1,0 +1,19 @@
+name: 🚀　Publish
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 🚧　Install
+        run: |
+          yarn
+      - name: 📦　Build
+        run: |
+          yarn package
+      - uses: dylanvann/publish-github-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
