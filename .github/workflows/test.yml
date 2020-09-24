@@ -1,0 +1,14 @@
+name: 'test'
+on:
+  pull_request:
+  issues:
+    types: [opened]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FIRST_ISSUE: Thanks for opening your first issue here! Be sure to follow the issue template!
