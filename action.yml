@@ -12,8 +12,8 @@ inputs:
   FIRST_PR_MERGED:
     description: Comment to be posted to on pull requests merged by a first time user.
 runs:
-  using: docker
-  image: Dockerfile
+  using: 'node12'
+  main: 'dist/index.js'
 branding:
   color: coral
   icon: heart

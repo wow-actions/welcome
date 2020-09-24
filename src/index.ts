@@ -1,9 +1,13 @@
 import * as core from '@actions/core'
-import { FirstIssue } from './first-issue'
+import * as github from '@actions/github'
+import { Core } from './core'
 
 async function run(): Promise<void> {
   try {
-    FirstIssue.run()
+    core.info(`action: ${github.context.action}`)
+    Core.firstIssue()
+    Core.firstPR()
+    Core.firstPRMerged()
   } catch (e) {
     core.error(e)
     core.setFailed(e)

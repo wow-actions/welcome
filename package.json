@@ -7,6 +7,8 @@
     "clean": "rimraf lib",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
+    "package": "ncc build src/index.ts --minify --v8-cache",
+    "prebuild": "run-s lint clean",
     "precommit": "lint-staged"
   },
   "husky": {
@@ -45,6 +47,7 @@
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
+    "@vercel/ncc": "^0.24.1",
     "eslint": "^7.9.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
