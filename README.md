@@ -1,5 +1,3 @@
-# welcome-action
-
 > GitHub action to give a welcome comment on first issue or PR 💖
 
 ## Usage
