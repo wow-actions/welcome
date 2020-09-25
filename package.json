@@ -2,7 +2,11 @@
   "name": "welcome-action",
   "version": "1.0.0",
   "description": "GitHub action to give a welcome comment on first issue or PR 💖",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "action.yml"
+  ],
   "scripts": {
     "clean": "rimraf dist lib",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
