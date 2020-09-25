@@ -4,10 +4,9 @@
   "description": "GitHub action to give a welcome comment on first issue or PR 💖",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf dist lib",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc",
-    "package": "ncc build src/index.ts --minify --v8-cache",
+    "build": "ncc build src/index.ts --minify --v8-cache",
     "prebuild": "run-s lint clean",
     "precommit": "lint-staged"
   },
