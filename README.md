@@ -15,7 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome@v1
+      - uses: bubkoo/welcome-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: >
@@ -47,7 +47,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome@v1
+      - uses: bubkoo/welcome-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: >
@@ -67,7 +67,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome@v1
+      - uses: bubkoo/welcome-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_PR: >
