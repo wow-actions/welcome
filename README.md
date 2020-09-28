@@ -36,7 +36,29 @@ jobs:
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
 ```
 
-Config for first issues:
+### Inputs
+
+- `GITHUB_TOKEN`: Your GitHub token for authentication
+- `FIRST_ISSUE` or `FIRST_ISSUE_COMMENT`: Comment to be posted to on first time issues.
+- `FIRST_ISSUE_REACTIONS`: Reactions to be add to comment on first time issues.
+- `FIRST_PR` or `FIRST_PR_COMMENT`: Comment to be posted to on PRs from first time contributors in your repository.
+- `FIRST_PR_REACTIONS`: Reactions to be add to comment on PRs from first time contributors in your repository.
+- `FIRST_PR_MERGED` or `FIRST_PR_MERGED_COMMENT`: Comment to be posted to on pull requests merged by a first time user.
+- `FIRST_PR_MERGED_REACTIONS`: Reactions to be add to comment on pull requests merged by a first time user.
+
+Available reactions:
+- `+1` 👍
+- `-1` 👎
+- `laugh` 😄
+- `confused` 😕
+- `heart` ❤️
+- `hooray` 🎉
+- `rocket` 🚀
+- `eyes` 👀
+
+### Other examples
+
+#### Config for First Issue
 
 ```yml
 name: Welcome
@@ -50,13 +72,14 @@ jobs:
       - uses: bubkoo/welcome-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRST_ISSUE: >
+          FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
+          FIRST_ISSUE_COMMENT: >
             👋 @${author}
             
              Thanks for opening your first issue here! Be sure to follow the issue template!
 ```
 
-Config for first PRs:
+#### Config for First PR
 
 ```yml
 name: Welcome
@@ -70,7 +93,8 @@ jobs:
       - uses: bubkoo/welcome-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRST_PR: >
+          FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
+          FIRST_PR_COMMENT: >
             👋 @${author}
             
             Thanks for opening this pull request! Please check out our contributing guidelines.

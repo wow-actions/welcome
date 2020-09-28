@@ -1,5 +1,6 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
+import { Reaction } from './reaction'
 import { Util } from './util'
 
 export namespace Action {
@@ -15,9 +16,16 @@ export namespace Action {
           (event === 'pull_request' && pr != null)) &&
         action === 'opened'
       ) {
-        const comment = core.getInput(
-          issue != null ? 'FIRST_ISSUE' : 'FIRST_PR',
-        )
+        const comment =
+          issue != null
+            ? core.getInput('FIRST_ISSUE') ||
+              core.getInput('FIRST_ISSUE_COMMENT')
+            : core.getInput('FIRST_PR') || core.getInput('FIRST_PR_COMMENT')
+        const reactions =
+          issue != null
+            ? core.getInput('FIRST_ISSUE_REACTIONS')
+            : core.getInput('FIRST_PR_REACTIONS')
+
         if (comment) {
           const entity = (issue || pr)!
           const author = entity.user.login
@@ -33,11 +41,15 @@ export namespace Action {
           )
 
           if (list.length === 1) {
-            await octokit.issues.createComment({
+            const { data } = await octokit.issues.createComment({
               ...context.repo,
               issue_number: entity.number,
               body: Util.pickComment(comment, { author }),
             })
+
+            if (reactions) {
+              await Reaction.add(octokit, data.id, reactions)
+            }
           }
         }
       } else if (
@@ -45,7 +57,11 @@ export namespace Action {
         event === 'pull_request' &&
         action === 'closed'
       ) {
-        const comment = core.getInput('FIRST_PR_MERGED')
+        const comment =
+          core.getInput('FIRST_PR_MERGED') ||
+          core.getInput('FIRST_PR_MERGED_COMMENT')
+        const reactions = core.getInput('FIRST_PR_MERGED_REACTIONS')
+
         if (pr.merged && comment) {
           const author = pr.user.login
           const { owner, repo } = context.repo
@@ -59,11 +75,15 @@ export namespace Action {
           )
 
           if (merged.length === 0) {
-            await octokit.issues.createComment({
+            const { data } = await octokit.issues.createComment({
               ...context.repo,
               issue_number: pr.number,
               body: Util.pickComment(comment, { author }),
             })
+
+            if (reactions) {
+              await Reaction.add(octokit, data.id, reactions)
+            }
           }
         }
       }

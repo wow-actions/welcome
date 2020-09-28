@@ -3,14 +3,33 @@ description: Give a welcome comment on first issue or PR 💖.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   GITHUB_TOKEN:
-    description: Your GitHub token for authentication
+    description: Your GitHub token for authentication.
     required: true
   FIRST_ISSUE:
     description: Comment to be posted to on first time issues.
+    required: false
+  FIRST_ISSUE_COMMENT: Comment to be posted to on first time issues.
+    required: false
+  FIRST_ISSUE_REACTIONS: Reactions to be add to comment on first time issues.
+    required: false
   FIRST_PR:
     description: Comment to be posted to on PRs from first time contributors in your repository.
+    required: false
+  FIRST_PR_COMMENT:
+    description: Comment to be posted to on PRs from first time contributors in your repository.
+    required: false
+  FIRST_PR_REACTIONS:
+    description: Reactions to be add to comment on PRs from first time contributors in your repository.
+    required: false
   FIRST_PR_MERGED:
     description: Comment to be posted to on pull requests merged by a first time user.
+    required: false
+  FIRST_PR_MERGED_COMMENT:
+    description: Comment to be posted to on pull requests merged by a first time user.
+    required: false
+  FIRST_PR_MERGED_REACTIONS:
+    description: Reactions to be add to comment on pull requests merged by a first time user.
+    required: false
 runs:
   using: node12
   main: dist/index.js
