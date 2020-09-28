@@ -12,7 +12,7 @@ on:
   issues:
     types: [opened]
 jobs:
-  test:
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: bubkoo/welcome-action@v1
