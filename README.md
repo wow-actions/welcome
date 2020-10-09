@@ -19,19 +19,19 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: >
-            👋 @${author}
+            👋 @{{ author }}
             
              Thanks for opening your first issue here! Be sure to follow the issue template!
 
 
           FIRST_PR: >
-            👋 @${author}
+            👋 @{{ author }}
             
             Thanks for opening this pull request! Please check out our contributing guidelines.
 
 
           FIRST_PR_MERGED: >
-            🎉 @${author}
+            🎉 @{{ author }}
             
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
 ```
@@ -47,6 +47,7 @@ jobs:
 - `FIRST_PR_MERGED_REACTIONS`: Reactions to be add to comment on pull requests merged by a first time user.
 
 Available reactions:
+
 - `+1` 👍
 - `-1` 👎
 - `laugh` 😄
@@ -74,7 +75,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
           FIRST_ISSUE_COMMENT: >
-            👋 @${author}
+            👋 @{{ author }}
             
              Thanks for opening your first issue here! Be sure to follow the issue template!
 ```
@@ -95,7 +96,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
           FIRST_PR_COMMENT: >
-            👋 @${author}
+            👋 @{{ author }}
             
             Thanks for opening this pull request! Please check out our contributing guidelines.
 ```

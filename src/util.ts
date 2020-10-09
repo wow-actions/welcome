@@ -1,5 +1,5 @@
+import mustache from 'mustache'
 import random from 'lodash.random'
-import template from 'lodash.template'
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 
@@ -16,7 +16,7 @@ export namespace Util {
       result = comment[pos] || comment[0]
     }
 
-    return args ? template(result)(args) : result
+    return args ? mustache.render(result, args) : result
   }
 
   export function isValidEvent(event: string, action?: string) {
