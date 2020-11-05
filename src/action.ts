@@ -5,17 +5,20 @@ import { Util } from './util'
 
 export namespace Action {
   export async function run(context = github.context) {
+    core.debug(`event: ${context.eventName}`)
+    core.debug(`action: ${context.payload.action}`)
+
     try {
       const event = context.eventName
       const action = context.payload.action
       const issue = context.payload.issue
       const pr = context.payload.pull_request
+      const isIssue = event === 'issues' && issue != null
+      const isPR =
+        (event === 'pull_request' || event === 'pull_request_target') &&
+        pr != null
 
-      if (
-        ((event === 'issues' && issue != null) ||
-          (event === 'pull_request' && pr != null)) &&
-        action === 'opened'
-      ) {
+      if ((isIssue || isPR) && action === 'opened') {
         const comment =
           issue != null
             ? core.getInput('FIRST_ISSUE') ||
@@ -52,11 +55,7 @@ export namespace Action {
             }
           }
         }
-      } else if (
-        pr != null &&
-        event === 'pull_request' &&
-        action === 'closed'
-      ) {
+      } else if (isPR && action === 'closed' && pr != null) {
         const comment =
           core.getInput('FIRST_PR_MERGED') ||
           core.getInput('FIRST_PR_MERGED_COMMENT')
