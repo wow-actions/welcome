@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/wow-actions/welcome-action/compare/v1.0.5...v1.0.6) (2021-09-18)
+
+
+### Bug Fixes
+
+* 🐛 action name ([eb4693a](https://github.com/wow-actions/welcome-action/commit/eb4693a709c42beb99f205ac02d5675a0ad718e3))
+
 ## [1.0.5](https://github.com/wow-actions/welcome-action/compare/v1.0.4...v1.0.5) (2021-09-18)
 
 
