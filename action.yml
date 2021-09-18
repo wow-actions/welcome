@@ -1,5 +1,5 @@
 name: Welcome New Users
-description: Give a welcome comment on first issue or PR 💖.
+description: 💖 Welcomes new users by creating a comment in the first time issue/PR
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   GITHUB_TOKEN:

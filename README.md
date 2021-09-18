@@ -1,6 +1,6 @@
 # Welcome
 
-> GitHub action to give a welcome comment on first issue or PR 💖
+Welcomes new users by creating a comment in the first time issue/PR
 
 ## Usage
 
@@ -45,14 +45,16 @@ jobs:
 
 Available reactions:
 
-- `+1` 👍
-- `-1` 👎
-- `laugh` 😄
-- `confused` 😕
-- `heart` ❤️
-- `hooray` 🎉
-- `rocket` 🚀
-- `eyes` 👀
+| content    | emoji |
+| ---------- | ----- |
+| `+1`       | 👍    |
+| `-1`       | 👎    |
+| `laugh`    | 😄    |
+| `confused` | 😕    |
+| `heart`    | ❤️    |
+| `hooray`   | 🎉    |
+| `rocket`   | 🚀    |
+| `eyes`     | 👀    |
 
 ### Other examples
 
