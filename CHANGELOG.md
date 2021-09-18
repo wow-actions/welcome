@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/wow-actions/welcome-action/compare/v1.0.4...v1.0.5) (2021-09-18)
+
+
+### Bug Fixes
+
+* 🐛 use wow-actions/use-app-token ([346636f](https://github.com/wow-actions/welcome-action/commit/346636ffc349b6bce395d877dc6e99655659569d))
+
 # 1.0.0 (2021-09-18)
 
 
