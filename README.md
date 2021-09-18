@@ -2,6 +2,8 @@
 
 Welcomes new users by creating a comment in the first time issue/PR
 
+![first-issue](https://github.com/wow-actions/welcome/blob/master/screenshots/first-issue.jpg?raw=true)
+
 ## Usage
 
 Create a `.github/workflows/welcome.yml` file in the repository you want to install this action, then add the following to it:
