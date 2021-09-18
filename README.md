@@ -1,3 +1,5 @@
+# Welcome
+
 > GitHub action to give a welcome comment on first issue or PR 💖
 
 ## Usage
@@ -15,24 +17,19 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome-action@v1
+      - uses: wow-actions/welcome@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FIRST_ISSUE: >
+          FIRST_ISSUE: |
             👋 @{{ author }}
-            
              Thanks for opening your first issue here! Be sure to follow the issue template!
 
-
-          FIRST_PR: >
+          FIRST_PR: |
             👋 @{{ author }}
-            
             Thanks for opening this pull request! Please check out our contributing guidelines.
 
-
-          FIRST_PR_MERGED: >
+          FIRST_PR_MERGED: |
             🎉 @{{ author }}
-            
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
 ```
 
@@ -70,13 +67,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome-action@v1
+      - uses: wow-actions/welcome@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
-          FIRST_ISSUE_COMMENT: >
+          FIRST_ISSUE_COMMENT: |
             👋 @{{ author }}
-            
              Thanks for opening your first issue here! Be sure to follow the issue template!
 ```
 
@@ -91,13 +87,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/welcome-action@v1
+      - uses: wow-actions/welcome@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
-          FIRST_PR_COMMENT: >
+          FIRST_PR_COMMENT: |
             👋 @{{ author }}
-            
             Thanks for opening this pull request! Please check out our contributing guidelines.
 ```
 
