@@ -28,14 +28,14 @@ export namespace Reaction {
             return true
           }
           core.debug(`Skipping invalid reaction '${item}'.`)
-          return false
         }
+        return false
       }) as ReactionType[]
   }
 
   export async function add(
     octokit: ReturnType<typeof github.getOctokit>,
-    comment_id: number, // tslint:disable-line
+    comment_id: number, // eslint-disable-line
     reactions: string | string[],
     owner: string = github.context.repo.owner,
     repo: string = github.context.repo.repo,
@@ -49,14 +49,18 @@ export namespace Reaction {
 
     core.debug(`Setting '${candidates.join(', ')}' reaction on comment.`)
 
-    const deferreds = candidates.map((content) => {
+    const deferreds: Promise<any>[] = []
+
+    candidates.forEach((content) => {
       try {
-        return octokit.reactions.createForIssueComment({
-          owner,
-          repo,
-          comment_id,
-          content,
-        })
+        deferreds.push(
+          octokit.rest.reactions.createForIssueComment({
+            owner,
+            repo,
+            comment_id,
+            content,
+          }),
+        )
       } catch (e) {
         core.debug(
           `Adding reaction '${content}' to comment failed with: ${e.message}.`,
@@ -65,6 +69,6 @@ export namespace Reaction {
       }
     })
 
-    return Promise.all(deferreds)
+    await Promise.all(deferreds)
   }
 }

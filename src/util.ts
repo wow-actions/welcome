@@ -20,8 +20,8 @@ export namespace Util {
   }
 
   export function isValidEvent(event: string, action?: string) {
-    const context = github.context
-    const payload = context.payload
+    const { context } = github
+    const { payload } = context
     if (event === context.eventName) {
       return action == null || action === payload.action
     }

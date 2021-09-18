@@ -1,4 +1,4 @@
-name: Welcome New Users
+name: Welcome
 description: Give a welcome comment on first issue or PR 💖.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:

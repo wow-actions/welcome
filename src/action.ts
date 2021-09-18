@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import { Reaction } from './reaction'
 import { Util } from './util'
+import { Reaction } from './reaction'
 
 export namespace Action {
   export async function run(context = github.context) {
@@ -10,8 +10,8 @@ export namespace Action {
 
     try {
       const event = context.eventName
-      const action = context.payload.action
-      const issue = context.payload.issue
+      const { action } = context.payload
+      const { issue } = context.payload
       const pr = context.payload.pull_request
       const isIssue = event === 'issues' && issue != null
       const isPR =
@@ -33,7 +33,7 @@ export namespace Action {
           const entity = (issue || pr)!
           const author = entity.user.login
           const octokit = Util.getOctokit()
-          const response = await octokit.issues.listForRepo({
+          const response = await octokit.rest.issues.listForRepo({
             ...context.repo,
             state: 'all',
             creator: author,
@@ -44,7 +44,7 @@ export namespace Action {
           )
 
           if (list.length === 1) {
-            const { data } = await octokit.issues.createComment({
+            const { data } = await octokit.rest.issues.createComment({
               ...context.repo,
               issue_number: entity.number,
               body: Util.pickComment(comment, { author }),
@@ -65,7 +65,7 @@ export namespace Action {
           const author = pr.user.login
           const { owner, repo } = context.repo
           const octokit = Util.getOctokit()
-          const res = await octokit.search.issuesAndPullRequests({
+          const res = await octokit.rest.search.issuesAndPullRequests({
             q: `is:pr is:merged author:${author} repo:${owner}/${repo}`,
           })
 
@@ -74,7 +74,7 @@ export namespace Action {
           )
 
           if (merged.length === 0) {
-            const { data } = await octokit.issues.createComment({
+            const { data } = await octokit.rest.issues.createComment({
               ...context.repo,
               issue_number: pr.number,
               body: Util.pickComment(comment, { author }),
