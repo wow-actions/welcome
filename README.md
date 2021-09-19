@@ -37,13 +37,19 @@ jobs:
 
 ### Inputs
 
-- `GITHUB_TOKEN`: Your GitHub token for authentication
-- `FIRST_ISSUE` or `FIRST_ISSUE_COMMENT`: Comment to be posted to on first time issues.
-- `FIRST_ISSUE_REACTIONS`: Reactions to be add to comment on first time issues.
-- `FIRST_PR` or `FIRST_PR_COMMENT`: Comment to be posted to on PRs from first time contributors in your repository.
-- `FIRST_PR_REACTIONS`: Reactions to be add to comment on PRs from first time contributors in your repository.
-- `FIRST_PR_MERGED` or `FIRST_PR_MERGED_COMMENT`: Comment to be posted to on pull requests merged by a first time user.
-- `FIRST_PR_MERGED_REACTIONS`: Reactions to be add to comment on pull requests merged by a first time user.
+Various inputs are defined to let you configure the action:
+
+> Note: [Workflow command and parameter names are not case-sensitive](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-commands-for-github-actions#about-workflow-commands).
+
+| Name | Description | Default |
+| --- | --- | --- |
+| `GITHUB_TOKEN` | The GitHub token for authentication | N/A |
+| `FIRST_ISSUE` <br> or <br> `FIRST_ISSUE_COMMENT` | Comment to be posted to on first time issues |  |
+| `FIRST_ISSUE_REACTIONS` | Reactions to be add to comment on first time issues |  |
+| `FIRST_PR` <br> or <br> `FIRST_PR_COMMENT` | Comment to be posted to on PRs from first time contributors in your repository |  |
+| `FIRST_PR_REACTIONS` | Reactions to be add to comment on PRs from first time contributors in your repository |  |
+| `FIRST_PR_MERGED` <br> or <br> `FIRST_PR_MERGED_COMMENT` | Comment to be posted to on pull requests merged by a first time user |  |
+| `FIRST_PR_MERGED_REACTIONS` | Reactions to be add to comment on pull requests merged by a first time user |  |
 
 Available reactions:
 
