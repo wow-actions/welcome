@@ -11,7 +11,7 @@
 </p>
 
 
-<p align="center"><strong>Welcome new users by creating a comment in the first time issue/PR</string></p>
+<p align="center"><strong>Welcome new users by creating a comment in the first time issue/PR</strong></p>
 
 ![first-issue](https://github.com/wow-actions/welcome/blob/master/screenshots/first-issue.jpg?raw=true)
 
