@@ -1,6 +1,6 @@
 {
   "name": "welcome",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "GitHub action to give a welcome comment on first issue or PR 💖",
   "main": "dist/index.js",
   "files": [
