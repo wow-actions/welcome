@@ -1,6 +1,5 @@
 <h1 align="center">Welcome</h1>
 
-
 <p align="center">
   <a href="https://github.com/wow-actions/welcome/actions/workflows/release.yml"><img alt="build" src="https://img.shields.io/github/actions/workflow/status/wow-actions/welcome/release.yml?branch=master&logo=github&style=flat-square" ></a>
   <a href="/wow-actions/welcome/blob/master/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/wow-actions/welcome?style=flat-square"></a>
@@ -9,7 +8,6 @@
   <a href="https://github.com/marketplace/actions/welcome" rel="nofollow"><img alt="website" src="https://img.shields.io/static/v1?label=&labelColor=505050&message=Marketplace&color=0076D6&style=flat-square&logo=google-chrome&logoColor=0076D6" ></a>
   <a href="https://lgtm.com/projects/g/wow-actions/welcome/context:javascript" rel="nofollow"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/wow-actions/welcome.svg?logo=lgtm&style=flat-square" ></a>
 </p>
-
 
 <p align="center"><strong>Welcome new users by creating a comment in the first time issue/PR</strong></p>
 
@@ -44,6 +42,8 @@ jobs:
           FIRST_PR_MERGED: |
             🎉 @{{ author }}
             Congrats on merging your first pull request! We here at behaviorbot are proud of you!
+
+          STAR_MESSAGE: If you like this project, please ⭐star⭐ our repo.
 ```
 
 ### Inputs
@@ -54,13 +54,14 @@ Various inputs are defined to let you configure the action:
 
 | Name | Description | Default |
 | --- | --- | --- |
-| `GITHUB_TOKEN` | The GitHub token for authentication | N/A |
-| `FIRST_ISSUE` <br> or <br> `FIRST_ISSUE_COMMENT` | Comment to be posted to on first time issues |  |
-| `FIRST_ISSUE_REACTIONS` | Reactions to be add to comment on first time issues |  |
-| `FIRST_PR` <br> or <br> `FIRST_PR_COMMENT` | Comment to be posted to on PRs from first time contributors in your repository |  |
-| `FIRST_PR_REACTIONS` | Reactions to be add to comment on PRs from first time contributors in your repository |  |
-| `FIRST_PR_MERGED` <br> or <br> `FIRST_PR_MERGED_COMMENT` | Comment to be posted to on pull requests merged by a first time user |  |
-| `FIRST_PR_MERGED_REACTIONS` | Reactions to be add to comment on pull requests merged by a first time user |  |
+| `GITHUB_TOKEN` | The GitHub token for authentication. | N/A |
+| `FIRST_ISSUE` <br> or <br> `FIRST_ISSUE_COMMENT` | Comment to be posted to on first time issues. |  |
+| `FIRST_ISSUE_REACTIONS` | Reactions to be add to comment on first time issues. |  |
+| `FIRST_PR` <br> or <br> `FIRST_PR_COMMENT` | Comment to be posted to on PRs from first time contributors in your repository. |  |
+| `FIRST_PR_REACTIONS` | Reactions to be add to comment on PRs from first time contributors in your repository. |  |
+| `FIRST_PR_MERGED` <br> or <br> `FIRST_PR_MERGED_COMMENT` | Comment to be posted to on pull requests merged by a first time user. |  |
+| `FIRST_PR_MERGED_REACTIONS` | Reactions to be add to comment on pull requests merged by a first time user. |  |
+| `STAR_MESSAGE` | Message in the comment to tip non-stargazers to star our repo. |  |
 
 Available reactions:
 

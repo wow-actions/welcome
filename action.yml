@@ -42,6 +42,10 @@ inputs:
     description: Reactions to be add to comment on pull requests merged by a first time user.
     required: false
 
+  STAR_MESSAGE:
+    description: Message in the comment to tip non-stargazers to star our repo.
+    required: false
+
 runs:
   using: node16
   main: dist/index.js
