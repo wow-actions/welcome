@@ -4,7 +4,8 @@ author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   GITHUB_TOKEN:
     description: Your GitHub token for authentication.
-    required: true
+    required: false
+    default: ${{ github.token }}
 
   FIRST_ISSUE:
     description: Comment to be posted to on first time issues.
