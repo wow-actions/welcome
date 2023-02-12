@@ -30,7 +30,6 @@ jobs:
     steps:
       - uses: wow-actions/welcome@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE: |
             👋 @{{ author }}
              Thanks for opening your first issue here! Be sure to follow the issue template!
@@ -54,7 +53,7 @@ Various inputs are defined to let you configure the action:
 
 | Name | Description | Default |
 | --- | --- | --- |
-| `GITHUB_TOKEN` | The GitHub token for authentication. | N/A |
+| `GITHUB_TOKEN` | The GitHub token for authentication. | `${{ github.token }}` |
 | `FIRST_ISSUE` <br> or <br> `FIRST_ISSUE_COMMENT` | Comment to be posted to on first time issues. |  |
 | `FIRST_ISSUE_REACTIONS` | Reactions to be add to comment on first time issues. |  |
 | `FIRST_PR` <br> or <br> `FIRST_PR_COMMENT` | Comment to be posted to on PRs from first time contributors in your repository. |  |
@@ -91,7 +90,6 @@ jobs:
     steps:
       - uses: wow-actions/welcome@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_ISSUE_REACTIONS: '+1, hooray, rocket, heart'
           FIRST_ISSUE_COMMENT: |
             👋 @{{ author }}
@@ -111,7 +109,6 @@ jobs:
     steps:
       - uses: wow-actions/welcome@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIRST_PR_REACTIONS: '+1, hooray, rocket, heart'
           FIRST_PR_COMMENT: |
             👋 @{{ author }}
